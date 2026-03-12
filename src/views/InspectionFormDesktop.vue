@@ -107,7 +107,7 @@ function clearSignature(index) {
             </div>
             <!-- 桌面：標題 + 使用者 + 按鈕 -->
             <div class="col d-none d-lg-flex align-items-center justify-content-between flex-nowrap min-width-0">
-              <h1 class="header-title mb-0 me-3">配電工程檢驗輔助子系統</h1>
+              <h1 class="header-title mb-0 me-3">檢驗輔助子系統</h1>
               <div class="d-flex align-items-center gap-3 me-3 flex-shrink-0">
                 <div class="avatar rounded-circle bg-light d-flex align-items-center justify-content-center"><i
                     class="bi bi-person"></i></div>
@@ -137,7 +137,6 @@ function clearSignature(index) {
           <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="關閉"></button>
         </div>
         <div class="offcanvas-body pt-3">
-          <h1 class="header-title h5 mb-4">配電工程檢驗輔助子系統</h1>
           <div class="d-flex align-items-center gap-3 mb-4">
             <div class="avatar rounded-circle bg-light d-flex align-items-center justify-content-center"><i
                 class="bi bi-person"></i></div>
@@ -155,6 +154,10 @@ function clearSignature(index) {
                 class="bi bi-box-arrow-right me-2" aria-hidden="true"></i>登出</button>
           </div>
         </div>
+      </div>
+      
+      <div class="d-flex d-lg-none justify-content-center align-items-center bg-white">
+        <h1 class="header-title h5 m-0 p-3 text-center">檢驗輔助子系統</h1>
       </div>
     </header>
 

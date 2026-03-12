@@ -3,15 +3,9 @@ import { createRouter, createWebHistory } from 'vue-router'
 const routes = [
   {
     path: '/',
-    name: 'inspection-desktop',
+    name: 'inspection',
     component: () => import('@/views/InspectionFormDesktop.vue'),
-    meta: { title: '配電工程帶料材料外觀抽查表（桌面版）' },
-  },
-  {
-    path: '/mobile',
-    name: 'inspection-mobile',
-    component: () => import('@/views/InspectionFormMobile.vue'),
-    meta: { title: '配電工程帶料材料外觀抽查表（手機版）' },
+    meta: { title: '配電工程帶料材料外觀抽查表' },
   },
 ]
 
