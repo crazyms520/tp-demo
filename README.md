@@ -1,4 +1,4 @@
-# TAI Power Demo
+# TP Demo
 
 Vue 3 + Vite 前端專案，並支援透過 **Zeplin MCP** 取得設計規格與 Design Tokens。
 
