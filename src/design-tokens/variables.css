@@ -1,0 +1,33 @@
+/**
+ * Design Tokens 作為 CSS 自訂屬性（來自 Zeplin）
+ * 在 main.js 匯入後，元件可用 var(--color-sf-dblue) 等
+ */
+
+:root {
+  /* Colors */
+  --color-black-70: rgba(35, 35, 35, 0.7);
+  --color-sf-dblue: rgb(17, 28, 71);
+  --color-red: rgb(228, 0, 0);
+  --color-dark-slate-blue-80: rgba(17, 28, 71, 0.8);
+  --color-red-two: rgb(205, 0, 0);
+  --color-brownish-grey: rgb(107, 107, 107);
+  --color-white: rgb(244, 244, 244);
+  --color-greyish-brown: rgb(63, 63, 63);
+  --color-cool-blue: rgb(71, 115, 192);
+  --color-sf-red: rgb(177, 14, 14);
+  --color-denim-blue: rgb(54, 85, 139);
+  --color-bluey-grey: rgb(179, 183, 198);
+  --color-brownish-grey-two: rgb(108, 108, 108);
+  --color-warm-grey: rgb(161, 161, 161);
+  --color-rouge: rgb(196, 18, 50);
+  --color-very-light-pink: rgb(216, 216, 216);
+  /* Zeplin 畫面用：側欄／標題強調色 */
+  --color-teal: rgb(84, 176, 172);
+  --color-page-bg: rgb(249, 249, 249);
+  --color-border: rgb(223, 223, 223);
+  --color-input-bg: rgb(242, 242, 242);
+  /* Zeplin 桌面版：側欄背景、按鈕 */
+  --color-sidebar: rgb(56, 61, 121);
+  --color-btn-upload: rgb(0, 78, 152);
+  --color-btn-cancel: rgb(100, 100, 100);
+}

@@ -1,0 +1,29 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+pnpm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Dependencies
+node_modules
+
+# Build（部署時在 CI 建置，不要 commit dist）
+dist
+dist-ssr
+*.local
+
+# Environment（避免將金鑰、API 網址等 commit 到 repo）
+.env
+.env.local
+.env.*.local
+
+# Editor
+.vscode/*
+!.vscode/extensions.json
+.idea
+
+# OS
+.DS_Store
+Thumbs.db
