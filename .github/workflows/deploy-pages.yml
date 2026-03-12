@@ -1,5 +1,6 @@
 # 建置並部署到 GitHub Pages
-# 說明：https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publish-source-for-your-github-pages-site#publishing-with-a-custom-github-actions-workflow
+# Repo: https://github.com/crazyms520/tp-demo
+# 部署後網址: https://crazyms520.github.io/tp-demo/
 
 name: Deploy to GitHub Pages
 
@@ -33,12 +34,11 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      # 若 repo 名稱為 tai-power-demo，網址會是 https://<username>.github.io/tai-power-demo/
-      # 請依實際 repo 名稱修改 VITE_BASE，或刪除 env 則使用根路徑（僅限 username.github.io）
+      # base 須與 repo 名稱一致，對應網址 https://crazyms520.github.io/tp-demo/
       - name: Build
         run: npm run build
         env:
-          VITE_BASE: /${{ github.event.repository.name }}/
+          VITE_BASE: /tp-demo/
 
       - name: Setup Pages
         uses: actions/configure-pages@v4

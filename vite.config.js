@@ -5,7 +5,7 @@ import { fileURLToPath } from 'url'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 
-// GitHub Pages 若用專案站（非 username.github.io），base 要等於 repo 名稱，例如 '/tai-power-demo/'
+// GitHub Pages 專案站：由 CI 傳入 VITE_BASE（本專案為 /tp-demo/），本機 dev 為 /
 const base = process.env.VITE_BASE || '/'
 
 export default defineConfig({

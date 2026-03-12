@@ -25,6 +25,13 @@ npm run build
 npm run preview
 ```
 
+## GitHub Pages
+
+- **Repo:** https://github.com/crazyms520/tp-demo
+- **線上預覽:** https://crazyms520.github.io/tp-demo/
+
+Push 至 `main` 後由 GitHub Actions 自動建置並部署。
+
 ## Zeplin MCP
 
 在 Cursor 中啟用 Zeplin MCP 後，可請 AI 使用 Zeplin 工具取得：
