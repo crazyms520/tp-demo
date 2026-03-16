@@ -87,7 +87,7 @@ function clearSignature(index) {
 <template>
   <div class="desktop-layout">
     <!-- 頂部 Header：桌面用 navbar 橫向；平板/手機用 Offcanvas 選單 -->
-    <header class="header border-bottom bg-white">
+    <header class="header header-sticky-mobile border-bottom bg-white">
       <nav class="navbar navbar-expand-lg navbar-light bg-white p-0">
         <div class="container-fluid px-0">
           <div class="row g-0 w-100 align-items-center flex-nowrap">
@@ -200,7 +200,7 @@ function clearSignature(index) {
 
       <!-- 抽查表單區 -->
       <section class="card mb-4">
-        <div class="row g-0 pt-3">
+        <div class="row g-0 p-3 sticky-row-mobile border-3 border-bottom border-primary">
           <div class="col-6">
             <div class="d-flex justify-content-center align-items-center gap-2">
               <span class="">回報狀態項目</span>
@@ -214,7 +214,7 @@ function clearSignature(index) {
         </div>
 
         <div class="card-header pt-3 bg-white border-0">
-          <div class="card-header-title pt-3 border-3 border-top border-primary">
+          <div class="card-header-title">
             <span class="">開始抽查</span>
           </div>
         </div>
@@ -276,7 +276,7 @@ function clearSignature(index) {
                     </div>
                     <!-- 類別表單：桌機左 nav、右 tabs；平板/手機為 nav 下方直接展開對應內容 -->
                     <div class="mb-3 category-nav-tabs">
-                      <p class="form-category-title mb-0 py-2 text-center">類別</p>
+                      <p class="form-category-title mb-0 mb-md-3 py-2 text-center">類別</p>
                       <!-- 平板/手機：每個 nav 下方展開對應內容 -->
                       <div class="category-mobile-accordion d-lg-none accordion" id="categoryAccordion1">
                         <div class="accordion-item category-mobile-item border-0 rounded-0">
@@ -570,7 +570,7 @@ function clearSignature(index) {
                               aria-controls="tab-handhole">預鑄手孔</button>
                           </nav>
                         </div>
-                        <div class="col-lg-9 tab-content-wrapper border-0 shadow-none">
+                        <div class="col-lg-9 tab-content-wrapper ps-0 border-0 shadow-none">
                           <div class="tab-content p-3" id="categoryTabContent">
                             <div class="tab-pane fade show active" id="tab-plastic" role="tabpanel">
                               <div class="mb-3">
@@ -931,7 +931,7 @@ function clearSignature(index) {
                       </div>
                     </div>
                     <div class="mb-3 category-nav-tabs">
-                      <p class="form-category-title mb-0 py-2 text-center">類別</p>
+                      <p class="form-category-title mb-0 mb-md-3 py-2 text-center">類別</p>
                       <div class="category-mobile-accordion d-lg-none accordion" id="categoryAccordion2">
                         <div class="accordion-item category-mobile-item border-0">
                           <h3 class="accordion-header">
@@ -1171,7 +1171,7 @@ function clearSignature(index) {
                               aria-controls="tab-handhole-2">預鑄手孔</button>
                           </nav>
                         </div>
-                        <div class="col-lg-9 tab-content-wrapper border-0 shadow-none">
+                        <div class="col-lg-9 tab-content-wrapper ps-0 border-0 shadow-none">
                           <div class="tab-content p-3" id="categoryTabContent2">
                             <div class="tab-pane fade show active" id="tab-plastic-2" role="tabpanel">
                               <div class="mb-3">
@@ -1527,7 +1527,7 @@ function clearSignature(index) {
                       </div>
                     </div>
                     <div class="mb-3 category-nav-tabs">
-                      <p class="form-category-title mb-0 py-2 text-center">類別</p>
+                      <p class="form-category-title mb-0 mb-md-3 py-2 text-center">類別</p>
                       <div class="category-mobile-accordion d-lg-none accordion" id="categoryAccordion3">
                         <div class="accordion-item category-mobile-item border-0">
                           <h3 class="accordion-header">
@@ -1755,7 +1755,7 @@ function clearSignature(index) {
                               aria-controls="tab-handhole-3">預鑄手孔</button>
                           </nav>
                         </div>
-                        <div class="col-lg-9 tab-content-wrapper border-0 shadow-none">
+                        <div class="col-lg-9 tab-content-wrapper ps-0 border-0 shadow-none">
                           <div class="tab-content p-3" id="categoryTabContent3">
                             <div class="tab-pane fade show active" id="tab-plastic-3" role="tabpanel">
                               <div class="mb-3">
@@ -2073,14 +2073,28 @@ function clearSignature(index) {
 <style scoped>
 .desktop-layout {
   min-height: 100vh;
-  /* padding-top: 40px; */
-  position: sticky;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 100;
   background: var(--color-page-bg);
-  overflow-x: hidden;
+  /* 不在外層設 overflow，否則內部 header 的 sticky-top 會失效 */
+}
+
+/* 僅手機/平板（< lg）時 header 使用 sticky；桌面版隨頁面捲動 */
+.header.header-sticky-mobile {
+  position: relative;
+}
+@media (max-width: 991.98px) {
+  .header.header-sticky-mobile {
+    position: sticky;
+    top: 0;
+    z-index: 1020;
+  }
+  /* 回報狀態項目列：黏在 header 下方，top 對齊 header 高度 */
+  .sticky-row-mobile {
+    position: sticky;
+    top: 7rem; /* 約等於 header（navbar + 標題列）高度 */
+    /* margin: 0 -8px; */
+    z-index: 1019;
+    background: #fff;
+  }
 }
 
 .back-link {
@@ -2327,9 +2341,12 @@ function clearSignature(index) {
 .tab-content-wrapper {
   border: 1px solid var(--color-border);
   border-radius: 4px;
-  background: #fff;
+  /* background: #fff; */
 }
 
+.tab-content {
+  background: #fff;
+}
 /* 平板/手機：類別 nav 在點擊處下方展開，樣式如圖（深藍／亮藍＋chevron） */
 .category-mobile-accordion.accordion {
   /* border: 1px solid var(--color-border); */
